@@ -206,7 +206,7 @@ export class DashboardComponent implements OnDestroy {
   private initRealtimeStream() {
     if (typeof window === 'undefined') return;
 
-    this.eventSource = new EventSource('http://localhost:3000/api/dashboard/stream');
+    this.eventSource = new EventSource('/api/dashboard/stream');
 
     // KPI live updates
     this.eventSource.addEventListener('kpi_update', (event: MessageEvent) => {

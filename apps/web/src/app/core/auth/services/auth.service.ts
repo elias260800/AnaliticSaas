@@ -8,7 +8,7 @@ import { LoginResponse, RefreshResponse, AuthUser } from '@analitic-saas/shared'
 })
 export class AuthService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = '/api';
 
   login(credentials: { email: string; passwordHash?: string; password?: string; tenantSlug: string }): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${this.apiUrl}/auth/login`, credentials);

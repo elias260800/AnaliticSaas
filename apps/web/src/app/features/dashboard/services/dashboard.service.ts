@@ -8,7 +8,7 @@ import { KpiFilters, KpisResponse, ChartResponse } from '@analitic-saas/shared';
 })
 export class DashboardService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:3000/api/dashboard';
+  private apiUrl = '/api/dashboard';
 
   getKpis(filters: KpiFilters): Observable<KpisResponse> {
     const params = this.buildParams(filters);
