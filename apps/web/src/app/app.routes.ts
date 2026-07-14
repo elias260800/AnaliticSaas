@@ -31,6 +31,33 @@ export const appRoutes: Route[] = [
             (m) => m.CLIENTS_ROUTES
           ),
       },
+      {
+        path: 'users',
+        canActivate: [permissionGuard],
+        data: { permissions: ['users:read'] },
+        loadComponent: () =>
+          import('./features/users/users.component').then(
+            (m) => m.UsersComponent
+          ),
+      },
+      {
+        path: 'billing',
+        canActivate: [permissionGuard],
+        data: { permissions: ['billing:read'] },
+        loadComponent: () =>
+          import('./features/billing/billing.component').then(
+            (m) => m.BillingComponent
+          ),
+      },
+      {
+        path: 'settings',
+        canActivate: [permissionGuard],
+        data: { permissions: ['settings:read'] },
+        loadComponent: () =>
+          import('./features/settings/settings.component').then(
+            (m) => m.SettingsComponent
+          ),
+      },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },
