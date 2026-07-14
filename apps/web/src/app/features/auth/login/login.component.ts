@@ -103,6 +103,16 @@ import { AuthStore } from '../../../core/auth/store/auth.store';
               Iniciar Sesión
             }
           </button>
+
+          <!-- Guest Login Button -->
+          <button
+            type="button"
+            (click)="loginAsGuest()"
+            [disabled]="authStore.isLoading()"
+            class="w-full mt-3 bg-transparent border border-purple-500/30 hover:border-purple-500/60 hover:bg-purple-500/5 text-purple-400 font-semibold rounded-xl py-3 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-purple-500/20 active:scale-[0.98]"
+          >
+            🔑 Acceder como Invitado (Demo)
+          </button>
         </form>
 
         <!-- Help Info -->
@@ -127,6 +137,15 @@ export class LoginComponent {
     email: ['admin@empresa.com', [Validators.required, Validators.email]],
     password: ['SecureP@ss123', [Validators.required, Validators.minLength(6)]],
   });
+
+  loginAsGuest() {
+    this.loginForm.patchValue({
+      tenantSlug: 'acme-corp',
+      email: 'admin@empresa.com',
+      password: 'SecureP@ss123',
+    });
+    this.onSubmit();
+  }
 
   onSubmit() {
     if (this.loginForm.valid) {
