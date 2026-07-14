@@ -5,7 +5,7 @@ import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { PermissionsGuard } from '../../common/guards/permissions.guard';
 import { RequirePermissions } from '../../common/decorators/permissions.decorator';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
-import { JwtPayload } from '@analitic-saas/shared';
+import { JwtPayload } from '../../../../../libs/shared/src';
 
 @Controller('clients')
 @UseGuards(JwtAuthGuard, PermissionsGuard)

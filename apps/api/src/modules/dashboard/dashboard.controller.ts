@@ -6,7 +6,7 @@ import { RequirePermissions } from '../../common/decorators/permissions.decorato
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
 import { DashboardService } from './dashboard.service';
 import { KpiFiltersDto } from './dto/kpi-filters.dto';
-import { JwtPayload, KpisResponse, ChartResponse } from '@analitic-saas/shared';
+import { JwtPayload, KpisResponse, ChartResponse } from '../../../../../libs/shared/src';
 
 @Controller('dashboard')
 @UseGuards(JwtAuthGuard, PermissionsGuard)

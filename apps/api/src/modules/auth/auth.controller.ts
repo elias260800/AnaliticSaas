@@ -4,7 +4,7 @@ import { LoginDto } from './dto/login.dto';
 import { RefreshDto } from './dto/refresh.dto';
 import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
-import { JwtPayload, LoginResponse, RefreshResponse, AuthUser } from '@analitic-saas/shared';
+import { JwtPayload, LoginResponse, RefreshResponse, AuthUser } from '../../../../../libs/shared/src';
 
 @Controller('auth')
 export class AuthController {

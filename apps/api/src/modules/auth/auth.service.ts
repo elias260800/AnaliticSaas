@@ -3,7 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 import { PrismaService } from '../../prisma/prisma.service';
 import { LoginDto } from './dto/login.dto';
 import { RefreshDto } from './dto/refresh.dto';
-import { AuthUser, LoginResponse, RefreshResponse } from '@analitic-saas/shared';
+import { AuthUser, LoginResponse, RefreshResponse } from '../../../../../libs/shared/src';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()

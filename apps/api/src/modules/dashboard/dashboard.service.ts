@@ -1,7 +1,7 @@
 import { Injectable, MessageEvent } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { KpiFiltersDto } from './dto/kpi-filters.dto';
-import { KpisResponse, ChartResponse, ChartSeries } from '@analitic-saas/shared';
+import { KpisResponse, ChartResponse, ChartSeries } from '../../../../../libs/shared/src';
 import { Observable, interval, map } from 'rxjs';
 
 @Injectable()
