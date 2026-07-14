@@ -2,7 +2,10 @@
   "name": "@analitic-saas/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "npx nx build web",
+    "vercel-build": "npx nx build web"
+  },
   "private": true,
   "dependencies": {
     "@angular-devkit/build-angular": "~22.0.4",
