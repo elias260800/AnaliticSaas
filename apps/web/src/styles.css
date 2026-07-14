@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* Custom premium design classes */
+body {
+  @apply bg-slate-950 text-slate-100 font-sans antialiased selection:bg-purple-500 selection:text-white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded hover:bg-slate-700 transition-colors;
+}
