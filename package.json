@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "npx nx build web",
-    "vercel-build": "npx nx build web"
+    "build": "npx prisma generate && npx nx build web",
+    "vercel-build": "npx prisma generate && npx nx build web"
   },
   "private": true,
   "dependencies": {

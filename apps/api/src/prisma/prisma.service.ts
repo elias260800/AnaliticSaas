@@ -8,6 +8,9 @@ export class PrismaService extends PrismaClient implements OnModuleInit, OnModul
   private static createPrismaOptions() {
     const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:SecurePassword123@localhost:5432/analitic_saas?schema=public';
     const pool = new Pool({ connectionString });
+    pool.on('error', (err) => {
+      console.warn('⚠️ Pool client error:', err.message);
+    });
     const adapter = new PrismaPg(pool);
     return { adapter };
   }
