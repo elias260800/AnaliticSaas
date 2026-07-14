@@ -22,6 +22,15 @@ export const appRoutes: Route[] = [
             (m) => m.DashboardComponent
           ),
       },
+      {
+        path: 'clients',
+        canActivate: [permissionGuard],
+        data: { permissions: ['clients:read'] },
+        loadChildren: () =>
+          import('./features/clients/clients.routes').then(
+            (m) => m.CLIENTS_ROUTES
+          ),
+      },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },
